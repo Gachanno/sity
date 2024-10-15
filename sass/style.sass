@@ -1,0 +1,245 @@
+@import 'fonts', 'normalize', 'media', 'global', 'utils', 'mixins', 'variables' 
+        
+*
+    box-sizing: border-box
+
+
+.logo
+    max-width: 45px
+    max-height: 45px
+
+.main-container
+    display: flex
+    width: 100vw
+    height: 100vh
+    background: #0077FF
+
+    &__left-section
+        display: flex
+        flex-direction: column
+        // justify-content: space-between
+        align-items: flex-start
+        row-gap: 47px
+        padding-block: 26px
+        padding-inline: 15px
+        width: 10vw
+        max-height: 100vh
+        transition: 0.7s cubic-bezier(0.46, 0.08, 0.41, 0.83)
+        z-index: 0
+
+        &--active
+            width: 20vw
+        
+    &__right-section
+        display: flex
+        background: #fff
+        justify-content: center
+        align-items: center
+        border-radius: 20px 0 0 0
+        height: 100vh
+        flex-grow: 2
+        z-index: 10
+        // width: 100px
+
+    &__right-text
+        font-weight: 400
+        font-size: 23px
+        color: #000
+        text-transform: uppercase
+
+    &__nav
+        display: flex
+        flex-direction: column
+        row-gap: 47px
+
+    &__logo-box
+        display: flex
+        position: relative
+
+    &__logo-text
+        overflow: hidden
+        display: flex
+        position: relative
+        opacity: 0
+        align-items: center
+        font-weight: 500
+        font-size: 23px
+        color: #000
+        transition: 0.5s cubic-bezier(0.46, 0.08, 0.41, 0.83), height 0s
+
+
+        &--active 
+            width: auto
+            opacity: 1
+            display: flex
+            margin-left: 10px
+
+
+        & :first-child
+            color: #000
+
+        & :last-child
+            color: #fff
+
+    &__chats-box
+        overflow: auto
+        display: flex
+        flex-direction: column
+        flex-grow: 2
+        // align-items: center
+        row-gap: 24px
+       
+        &::-webkit-scrollbar
+            display: none
+
+    &__chat-icon
+        @include square(45px)
+        border-radius: 30px
+        background:#d9d9d9
+
+    &__friend
+        &-box
+            display: flex
+            flex-direction: column
+            row-gap: 32px
+
+        &-select
+            display: flex
+            align-items: center
+            column-gap: 9px
+
+        &-icon 
+            @include square(45px)
+            padding: 10px
+            border-radius: 30px
+            background: #fff
+
+        &-title
+            font-weight: 500
+            font-size: 23px
+            color: #fff
+
+        &-arrow 
+            position: relative
+            @include square(22px)
+
+            span
+                top: 50%
+                position: absolute
+                width: 50%
+                height: 3px
+                background: #fff
+                border-radius: 2px
+                transition: 0.7s
+
+                &:first-child
+                    left: -3px
+                    transform: rotate(-45deg)
+                &:last-child
+                    left: 3px
+                    transform: rotate(45deg)
+
+            &--active
+                span
+                    &:first-child
+                        left: -3px
+                        transform: rotate(45deg)
+                    &:last-child
+                        left: 3px
+                        transform: rotate(-45deg)
+        
+        &-options
+            overflow: hidden
+            max-height: 0
+            display: flex
+            flex-direction: column
+            row-gap: 35px
+            padding-left: 21px
+            transition: max-height 1s cubic-bezier(0.4, 0, 1, 1)
+
+            &--active
+                max-height: 100vh
+        
+        &-option
+            display: flex
+            column-gap: 15px
+            align-items: center
+            color: #fff
+
+            img
+                @include square(45px)
+        
+        &-name 
+            opacity: 0
+            transition: 0.5s
+            @media ( min-width: 1850px)
+                opacity: 1
+            
+            &--active 
+                opacity: 1
+        
+        &-add
+            display: flex
+            justify-content: center
+            align-items: center
+            width: 134px
+            height: 45px 
+            background: #fff
+            border-radius: 30px
+            font-weight: 400
+            font-size: 17px
+            color: #000
+
+            &::before
+                content: "+"
+                display: flex
+                flex-direction: row
+                align-items: center
+                justify-content: center
+                @include square(24px)
+                font-size: 35px
+                text-align: center
+                color: #000
+    
+    &__account
+
+        &-flex
+            overflow: hidden
+            display: flex
+            justify-content: space-between
+            align-items: center
+            height: 45px
+            width: 45px
+            background-color: #fff
+            outline: 1px solid #e3e4e5
+            border-radius: 28px
+            
+
+            &--active
+                width: 100%
+                padding: 1px
+
+        &-box
+            display: flex
+            align-items: center
+            column-gap: 7px
+        
+        &-icon
+            @include square(45px)
+            border-radius: 28px
+            align-items: flex-end
+        
+        &-name
+            opacity: 0
+            font-weight: 400
+            font-size: 20px
+            color: #000
+
+            &--active
+                opacity: 1
+        
+        &-setting
+            opacity: 0
+
+            &--active
+                opacity: 1
