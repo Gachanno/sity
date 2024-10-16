@@ -118,10 +118,16 @@
             font-weight: 500
             font-size: 23px
             color: #fff
+            opacity: 0
+            transition: 0.6s
+
+            &--active 
+                opacity: 1
 
         &-arrow 
             position: relative
             @include square(22px)
+            opacity: 0
 
             span
                 top: 50%
@@ -147,12 +153,16 @@
                     &:last-child
                         left: 3px
                         transform: rotate(-45deg)
+            
+            &--visibale
+                opacity: 1
         
         &-options
             overflow: hidden
             max-height: 0
             display: flex
             flex-direction: column
+            align-items: flex-start
             row-gap: 35px
             padding-left: 21px
             transition: max-height 1s cubic-bezier(0.4, 0, 1, 1)
@@ -182,13 +192,18 @@
             display: flex
             justify-content: center
             align-items: center
-            width: 134px
+            min-width: 134px
             height: 45px 
             background: #fff
             border-radius: 30px
             font-weight: 400
             font-size: 17px
             color: #000
+            transition: 0.7s
+
+            &--active 
+                min-width: 45px
+                font-size: 0
 
             &::before
                 content: "+"

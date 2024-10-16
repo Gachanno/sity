@@ -294,11 +294,17 @@ a {
   font-weight: 500;
   font-size: 23px;
   color: #fff;
+  opacity: 0;
+  transition: 0.6s;
+}
+.main-container__friend-title--active {
+  opacity: 1;
 }
 .main-container__friend-arrow {
   position: relative;
   width: 22px;
   aspect-ratio: 1;
+  opacity: 0;
 }
 .main-container__friend-arrow span {
   top: 50%;
@@ -325,11 +331,15 @@ a {
   left: 3px;
   transform: rotate(-45deg);
 }
+.main-container__friend-arrow--visibale {
+  opacity: 1;
+}
 .main-container__friend-options {
   overflow: hidden;
   max-height: 0;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   row-gap: 35px;
   padding-left: 21px;
   transition: max-height 1s cubic-bezier(0.4, 0, 1, 1);
@@ -364,13 +374,18 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 134px;
+  min-width: 134px;
   height: 45px;
   background: #fff;
   border-radius: 30px;
   font-weight: 400;
   font-size: 17px;
   color: #000;
+  transition: 0.7s;
+}
+.main-container__friend-add--active {
+  min-width: 45px;
+  font-size: 0;
 }
 .main-container__friend-add::before {
   content: "+";
